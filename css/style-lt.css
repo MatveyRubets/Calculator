@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "My Custom Font";
+  src: url('../font/c.ttf');
+}
+
+.calc {
+  font-family: "My Custom Font";
+  margin: 50px auto;
+  width: 300px;
+  height: 500px;
+  border: 1px solid #828282;
+  border-radius: 20px;
+  color: rgb(0, 0, 0);
+  padding: 18px 18px 90px;
+  box-shadow: 2px 2px 2px #a4a4a4;
+  background: rgb(198, 198, 198);
+}
+
+.calc-screen {
+  height: 125px;
+  padding: 10px;
+  display: grid;
+  justify-items: end;
+  align-items: end;
+  margin-bottom: 20px;
+  border: 1px solid #8c8c8c;
+  box-shadow: 4px 4px 4px #8e8e8e;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.calc-screen p {
+  text-align: right;
+  font-size: 4rem;
+  user-select: none;
+  margin: 0;
+}
+
+.buttons {
+  display: grid;
+  grid-template-areas:
+    "ac plus-minus percent division"
+    "seven eigth nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+  grid-gap: 5px;
+  grid-row-gap: 18px;
+  justify-items: center;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 800;
+  font-size: 30px;
+  bottom: 0;
+  background: rgb(235, 235, 235);
+  color: rgb(0, 0, 0);
+  border: 2px solid #6f6f6f;
+  border-radius: 15px;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.btn::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(187, 187, 187);
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px rgb(143, 143, 143), 0 8px 0 0 rgb(215, 215, 215);
+  transform: translate3d(0, 10px, -16px);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.btn:hover {
+  transform: translate(0, 4px);
+  background: rgb(215, 215, 215);
+}
+
+.btn:hover::before {
+  box-shadow: 0 0 0 2px rgb(164, 164, 164), 0 8px 0 0 rgb(215, 215, 215);
+  transform: translate3d(0, 8px, -1px);
+}
+
+.btn:active {
+  transform: translate(0, 12px);
+  background: rgb(191, 191, 191);
+}
+
+.btn:active::before {
+  box-shadow: 0 0 0 2px rgb(152, 152, 152), 0 0 rgb(152, 152, 152);
+  transform: translate3d(0, 0, -16px);
+}
+
+.btn.zero {
+  grid-area: zero;
+  width: 100%;
+}
+
+.bg-grey {
+  background: rgb(165, 160, 150);
+  color: white;
+}
+
+.bg-grey:hover {
+  background: rgb(130, 126, 118);
+}
+
+.bg-orange {
+  background: rgb(240, 133, 50);
+  color: white;
+}
+
+.bg-orange:hover {
+  background: rgb(249, 124, 29);
+}
+.bg-orange:active {
+  background: rgb(255, 116, 9);
+}
